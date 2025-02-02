@@ -20,7 +20,7 @@
 [What ridiculous problem are you solving?]
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+[By understanding what the user feally neeeds]
 
 ## Technical Details
 ### Technologies/Components Used
@@ -69,9 +69,6 @@ For Hardware:
 team photo
 
 
-![Build](Add photos of build process here)
-*Explain the build steps*
-
 ### Project Demo
 # Video
 [https://drive.google.com/file/d/13dcFYQ3wNFBsocFHtg0K88RADE938MVg/view?usp=drive_link]
@@ -81,9 +78,9 @@ team photo
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Deepashree S Menon]: [Code Handling]
+- [Deepashree S Menon]: [Code Handling,prompting]
 - [A Malavika Thampi]: [Code Handling, ideation]
-- [Anagha B]: [Prompting]
+- [Anagha B]: [Prompting,code handling]
 
 ---
 Made with ❤️ at TinkerHub
