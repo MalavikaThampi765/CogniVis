@@ -1,0 +1,33 @@
+<script>
+    document.getElementById("dyslexiaToggle").addEventListener("click", function () {
+        let iframe = document.getElementById("contentFrame");
+    
+        // Ensure the iframe is loaded before applying styles
+        iframe.onload = function () {
+            let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    
+            // Create a new style element
+            let style = iframeDoc.createElement("style");
+            style.innerHTML = `
+                body {
+                    font-family: 'Open Dyslexic', Arial, sans-serif !important;
+                    font-size: 26px !important;  /* Adjusted for readability */
+                    letter-spacing: 0.15em !important; /* 3.5x interletter spacing */
+                    line-height: 1.8 !important; /* Better line spacing */
+                    text-align: left !important; /* Left align text */
+                }
+                h1, h2, h3, h4, h5, h6, p {
+                    font-weight: bold !important; /* No underlining/italics */
+                }
+                a {
+                    text-decoration: none !important;
+                    font-weight: bold !important;
+                }
+            `;
+    
+            // Append the style element to the iframe document
+            iframeDoc.head.appendChild(style);
+        };
+    });
+    </script>
+    

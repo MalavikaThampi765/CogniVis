@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Accessible Halloween Event Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: row; /* Changed to row to align iframe and buttons horizontally */
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-right: 20px; /* Adds space between buttons and iframe */
+    }
+    .toggle-button {
+      background-color: #ff6600;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1em;
+      margin: 5px 0;
+      width: 150px; /* Make buttons wider */
+      text-align: center;
+    }
+    .toggle-button:hover {
+      background-color: #e55d00; /* Slightly darker on hover */
+    }
+    .toggle-button:focus {
+      outline: 3px solid #ffcc00;
+    }
+    iframe {
+      width: 800px;
+      height: 600px;
+      border: none;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <!-- Buttons for switching iframe content -->
+    <button class="toggle-button" onclick="handleCase(1)">epilepsy-SmartInvert</button>
+    <button class="toggle-button" onclick="handleCase(2)">DyslexicMode</button>
+
+    <button class="toggle-button" onclick="handleCase(3)">ADHDfocusEnvt</button>
+    <button class="toggle-button" onclick="handleCase(4)">ColourAssistMode</button>
+
+  </div>
+
+  <iframe id="iframe" src="https://websitedemos.net/halloween-event-04/" width="800px" height="600px"></iframe>
+
+  <footer>
+    <p>&copy; 2025 Accessible Halloween Event Page</p>
+  </footer>
+
+  <script>
+    let smartInvertOn = false;  // Variable to track Smart Invert state
+
+    function handleCase(caseNumber) {
+      switch(caseNumber) {
+        
+        case 1:
+        if (!smartInvertOn) {
+            // If Smart Invert is off, turn it on
+            let iframe = document.getElementById('iframe');
+            
+            // Apply the Smart Invert effect on the iframe
+            iframe.style.filter = 'invert(1)';
+            iframe.style.filter += ' contrast(100%)'; // Optional: Keeps contrast
+
+            alert('Smart Invert Activated for this page');
+            
+            smartInvertOn = true;  // Update the state to indicate Smart Invert is on
+        } else {
+            // If Smart Invert is on, ask user if they want to turn it off
+            const userResponse = confirm('Do you want to turn off Smart Invert?');
+            
+            if (userResponse) {
+            let iframe = document.getElementById('iframe');
+            
+            // Remove the filter to turn off Smart Invert
+            iframe.style.filter = 'none';
+            
+            alert('Smart Invert Deactivated for this page');
+            
+            smartInvertOn = false;  // Update the state to indicate Smart Invert is off
+            }
+        }
+        break;
+
+        case 2:
+          
+          alert("Executing Case 2: Font Correction");
+          // Here you can add the functionality for font edit
+          // Check if dyslexic-friendly mode is already on
+        let iframe = document.getElementById('iframe');
+
+        if (iframe.style.fontFamily !== 'Open Dyslexic') {
+        // Apply dyslexic-friendly styles
+        iframe.style.fontFamily = 'Open Dyslexic'; // Set font to Open Dyslexic
+        iframe.style.fontSize = '24px'; // Set the font size (starting point can be adjusted)
+        iframe.style.letterSpacing = '0.35em'; // Increase letter spacing to 3.5 times interletter spacing
+        iframe.style.lineHeight = '1.6'; // Better line spacing
+        iframe.style.textAlign = 'left'; // Set left alignment
+        iframe.style.fontWeight = 'bold'; // Set font weight to bold
+        iframe.style.fontStyle = 'normal'; // Remove italics
+
+        alert('Dyslexic-friendly mode is now activated for this page');
+        } else {
+        // Reset to the original state if the button is clicked again
+        iframe.style.fontFamily = 'Open Dyslexic'; // Reset font
+        iframe.style.fontSize = '16px'; // Reset font size (or default)
+        iframe.style.letterSpacing = 'normal'; // Reset letter spacing
+        iframe.style.lineHeight = 'normal'; // Reset line height
+        iframe.style.textAlign = 'center'; // Reset to center alignment
+        iframe.style.fontWeight = 'normal'; // Reset font weight
+        iframe.style.fontStyle = 'italic'; // Reset italics
+
+        alert('Dyslexic-friendly mode has been deactivated');
+        }
+          break;
+        
+        case 3:
+          // Code for ADHD Focus Environment
+          alert("Executing Case 4: ADHD Focus Environment");
+          // Add your custom code for ADHD focus environment
+          break;
+        case 4:
+          // Code for Color Assist
+          alert("Executing Case 5: Color Assist");
+          // Add your custom code for color assist functionality
+          break;
+        default:
+          alert("Invalid Case");
+      }
+    }
+  </script>
+</body>
+</html>

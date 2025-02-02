@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>This is my first webpage.</p>
-    <button onclick="changeText()">Click Me</button>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+// Wait for the page to fully load
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the button element
+    let button = document.getElementById("changeTextBtn");
+
+    // Add event listener to change text when clicked
+    button.addEventListener("click", function () {
+        document.getElementById("text").textContent = "You clicked the button!";
+    });
+
+    console.log("JavaScript file loaded successfully!"); // Debugging message
+});
